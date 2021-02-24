@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <windows.h>    // SetConsoleCursorPosition()
 #include <conio.h>      // __kbhit()
@@ -7,25 +6,10 @@
 #include <algorithm>    // min_element()
 using namespace std;
 
-// 블럭 모양 2차원 배열로
-// 블럭 클래스 : 회전
-// 놀음판 (10x20)
-// 1초마다 떨어지기
-// 블럭 저장 & 그다음 블럭
-// 블럭 쌓기 (밑에 블럭 체크)
-// 블럭 한 줄 없애기
-// 블럭 삭제시 밑에 빈공간 카운트
-// 벽 충돌 감지
-// min_dist 감지 방식 -> 블럭 스택 감지 방식
-// 벽충돌 & 블럭 충돌 감지 합치기
-// 그 다음 블럭 출력
-
 int g_Board_X = 13;      // MODIFIABLE
 int g_Board_Y = 23;     // MODIFIABLE
 string CODE[7][4];
 
-
-// 보드 프린트
 void printBoard(void) {
     for (int i = 0; i < g_Board_Y + 2; ++i) {
         for (int j = 0; j < g_Board_X + 2; ++j) {
@@ -460,7 +444,6 @@ int main() {
 
     while (true) {
         
-
         if (_kbhit()) {
             input = _getch();
             if (input == 224) {
